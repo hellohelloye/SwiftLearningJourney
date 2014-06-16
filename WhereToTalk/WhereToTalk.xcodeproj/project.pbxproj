@@ -15,6 +15,7 @@
 		0BDC22531940B4CD004E8F9A /* WhereToTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC22521940B4CD004E8F9A /* WhereToTalkTests.swift */; };
 		0BDC225D1940DAF6004E8F9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDC225C1940DAF6004E8F9A /* MapKit.framework */; };
 		0BDC225F1940DD44004E8F9A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDC225E1940DD44004E8F9A /* CoreLocation.framework */; };
+		3D1D7BF52FAD44C982DD5411 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167B18DB1924DB690449B32 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0B0D41AF19464EDD002CF453 /* WTTDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTTDetailViewController.swift; sourceTree = "<group>"; };
+		0B2A7B05194F799A00BB952D /* WhereToTalk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhereToTalk-Bridging-Header.h"; sourceTree = "<group>"; };
 		0BDC223A1940B4CD004E8F9A /* WhereToTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC223E1940B4CD004E8F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDC223F1940B4CD004E8F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		0BDC22521940B4CD004E8F9A /* WhereToTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToTalkTests.swift; sourceTree = "<group>"; };
 		0BDC225C1940DAF6004E8F9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0BDC225E1940DD44004E8F9A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6167B18DB1924DB690449B32 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7E26B52A6948D28C8EBA84 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			files = (
 				0BDC225F1940DD44004E8F9A /* CoreLocation.framework in Frameworks */,
 				0BDC225D1940DAF6004E8F9A /* MapKit.framework in Frameworks */,
+				3D1D7BF52FAD44C982DD5411 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,8 @@
 				0BDC223C1940B4CD004E8F9A /* WhereToTalk */,
 				0BDC224F1940B4CD004E8F9A /* WhereToTalkTests */,
 				0BDC223B1940B4CD004E8F9A /* Products */,
+				7A7E26B52A6948D28C8EBA84 /* Pods.xcconfig */,
+				40CB24FE524F4DB691D3E804 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0BDC223E1940B4CD004E8F9A /* Info.plist */,
+				0B2A7B05194F799A00BB952D /* WhereToTalk-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,6 +128,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		40CB24FE524F4DB691D3E804 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6167B18DB1924DB690449B32 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BDC22561940B4CD004E8F9A /* Build configuration list for PBXNativeTarget "WhereToTalk" */;
 			buildPhases = (
+				3E92C65F44AF47C29BBBB084 /* Check Pods Manifest.lock */,
 				0BDC22361940B4CC004E8F9A /* Sources */,
 				0BDC22371940B4CC004E8F9A /* Frameworks */,
 				0BDC22381940B4CC004E8F9A /* Resources */,
+				71CC0EC555784297AF2740FF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +231,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E92C65F44AF47C29BBBB084 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71CC0EC555784297AF2740FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0BDC22361940B4CC004E8F9A /* Sources */ = {
@@ -334,23 +385,27 @@
 		};
 		0BDC22571940B4CD004E8F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A7E26B52A6948D28C8EBA84 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WhereToTalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhereToTalk/WhereToTalk-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		0BDC22581940B4CD004E8F9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A7E26B52A6948D28C8EBA84 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WhereToTalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhereToTalk/WhereToTalk-Bridging-Header.h";
 			};
 			name = Release;
 		};
