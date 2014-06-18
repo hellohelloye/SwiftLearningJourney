@@ -60,15 +60,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else {
             cell.text = "location *  Time * #\(indexPath.row)"
             cell.detailTextLabel.text = "conversation Topic : #\(indexPath.row)"
-            //118;238;198
             cell.backgroundColor = UIColor(red: 118/255, green: 238/255, blue: 198/255, alpha: 1.0)
             cell.textColor = UIColor .whiteColor()
             cell.detailTextLabel.textColor = UIColor .whiteColor()
         }
-        
         return cell
     }
-    
 
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         if indexPath.section == 0 {
@@ -77,7 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else {
             let cell:UITableViewCell = self.tableView .cellForRowAtIndexPath(indexPath)
             self.performSegueWithIdentifier("showDetail", sender: cell)
-            }
+        }
     }
 
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject) {
@@ -85,7 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let itemviewcontroller:WTTDetailViewController = segue.destinationViewController as WTTDetailViewController
        }
      }
-  //  #pragma mark - MKMapkitDelegate
+//  #pragma mark - MKMapkitDelegate
 //    func mapView(mapView: MKMapView!, regionWillChangeAnimated animated: Bool) {
 //        return YES
 //    }

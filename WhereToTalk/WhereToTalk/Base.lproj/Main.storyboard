@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="982-Zi-HRS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="iJ7-jf-gd9">
+            <objects>
+                <navigationController id="982-Zi-HRS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rFn-Xm-PSb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ad3-p2-0VG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vr-nf-jwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1697" y="430.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -39,7 +55,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="497" height="44"/>
                                         </variation>
                                     </tableViewCell>
-                                    <tableViewCell appearanceType="aqua" contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ZLT-0b-lWY">
+                                    <tableViewCell appearanceType="aqua" contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="366" id="ZLT-0b-lWY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZLT-0b-lWY" id="IRc-tM-59n">
@@ -49,7 +65,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="497" height="44"/>
                                         </variation>
                                         <connections>
-                                            <segue destination="A6A-G5-D6n" kind="presentation" identifier="showDetail" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="tPF-gI-6rD"/>
+                                            <segue destination="A6A-G5-D6n" kind="show" identifier="showDetail" id="tPF-gI-6rD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,6 +93,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="0s4-0w-MYj"/>
                     <connections>
                         <outlet property="mapView" destination="z59-Cq-lhW" id="h3i-R2-uqy"/>
                         <outlet property="tableView" destination="HRs-RH-Epx" id="ipn-bc-tof"/>
@@ -84,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="396.75"/>
+            <point key="canvasLocation" x="-1042" y="381.75"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="e6E-L9-dal">
@@ -97,14 +114,90 @@
                     <view key="view" contentMode="scaleToFill" id="bMu-ev-anv">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-5X-6dv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="💬">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="383" y="15" width="53" height="36"/>
+                                </variation>
+                                <connections>
+                                    <action selector="writeMsg:" destination="A6A-G5-D6n" eventType="touchUpInside" id="GgC-1d-ROe"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JK8-Rx-MOM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoTopicCell" rowHeight="109" id="bT1-ij-Z60">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bT1-ij-Z60" id="hyh-Vo-bxd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <variation key="heightClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="44"/>
+                                        </variation>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="convoMsgCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoMsgCell" rowHeight="59" id="qtf-gr-YdN">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qtf-gr-YdN" id="vVu-aj-vHw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <variation key="heightClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="487" height="44"/>
+                                        </variation>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="487" height="518"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="A6A-G5-D6n" id="sua-ia-ldT"/>
+                                    <outlet property="delegate" destination="A6A-G5-D6n" id="JAp-zX-3bn"/>
+                                </connections>
+                            </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-LX-Zj7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="RrF-ad-K2p"/>
+                                    <tabBarItem systemItem="more" id="Mhj-Nr-WTf"/>
+                                </items>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="582" width="480" height="49"/>
+                                </variation>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Te9-5X-6dv"/>
+                                <exclude reference="JK8-Rx-MOM"/>
+                                <exclude reference="5OV-LX-Zj7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="Te9-5X-6dv"/>
+                                <include reference="JK8-Rx-MOM"/>
+                                <include reference="5OV-LX-Zj7"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="wvN-G0-pNe"/>
+                    <connections>
+                        <outlet property="convoTableView" destination="JK8-Rx-MOM" id="X8v-Xo-2qq"/>
+                        <outlet property="msgBtn" destination="Te9-5X-6dv" id="xSR-MM-9O1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjE-oy-GXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="385.5"/>
+            <point key="canvasLocation" x="-386" y="394.5"/>
         </scene>
     </scenes>
 </document>
