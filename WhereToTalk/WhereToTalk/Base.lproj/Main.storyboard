@@ -132,7 +132,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoTopicCell" rowHeight="109" id="bT1-ij-Z60">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoTopicCell" rowHeight="109" id="bT1-ij-Z60">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bT1-ij-Z60" id="hyh-Vo-bxd">
@@ -142,7 +142,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="487" height="44"/>
                                         </variation>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="convoMsgCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoMsgCell" rowHeight="59" id="qtf-gr-YdN">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="convoMsgCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoMsgCell" rowHeight="59" id="qtf-gr-YdN">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qtf-gr-YdN" id="vVu-aj-vHw">
