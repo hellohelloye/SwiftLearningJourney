@@ -1,6 +1,7 @@
 ##Solutions on coding problems
 ###### Problem on drawing bottom line For custom UICollectionViewCell | UITableViewCell
 ```objc
+// calling : setSelected -> prepareForReuse -> layoutSubviews
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     [self setNeedsLayout];
