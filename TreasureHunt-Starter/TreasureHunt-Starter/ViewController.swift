@@ -11,18 +11,11 @@ import CoreLocation
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    @IBOutlet var mapView: MKMapView
-    var treasures = Treasure[]()
-
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
+    @IBOutlet var mapView: MKMapView!
+    var treasures:[Treasure] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    
-        
         self.treasures = [
             HistoryTreasure(what:"Google's first office",
                 year: 1999,
@@ -46,11 +39,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             HQTreasure(company: "Google",
                 latitude: 37.422, longitude: -122.084),
         ]
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {

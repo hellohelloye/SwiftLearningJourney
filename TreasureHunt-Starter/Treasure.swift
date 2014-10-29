@@ -10,7 +10,7 @@
 import Foundation
 import MapKit
 
-class Treasure {
+class Treasure: NSObject {
     let what: String
     let location: GeoLocation
     
@@ -25,6 +25,10 @@ class Treasure {
     }
 }
 
+extension Treasure: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D { return self.location }
+    var title: String { return self.what }
+}
 
 class HistoryTreasure: Treasure {
     let year: Int
@@ -35,7 +39,6 @@ class HistoryTreasure: Treasure {
         super.init(what: what, location: location)
     }
 }
-
 
 class FactTreasure: Treasure {
     let fact: String
@@ -57,3 +60,4 @@ class HQTreasure: Treasure {
         super.init(what: company + " headquarters", location: location)
     }
 }
+
