@@ -1,0 +1,22 @@
+//
+//  Practice-Prefix.pch
+//  Practice
+//
+//  Created by Yukui ye on 11/7/14.
+//  Copyright (c) 2014 Yukui Ye. All rights reserved.
+//
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <TSMessages/TSMessage.h>
+
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+#endif
